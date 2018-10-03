@@ -47,7 +47,7 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// command line flags
-	port := flag.Int("port", 80, "port to serve on")
+	port := flag.Int("port", 3000, "port to serve on")
 	dir := flag.String("directory", "web/", "directory of web files")
 	flag.Parse()
 
@@ -61,7 +61,8 @@ func main() {
 
 	log.Printf("Running on port %d\n", *port)
 
-	addr := fmt.Sprintf("127.0.0.1:%d", *port)
+	//	addr := fmt.Sprintf("127.0.0.1:%d", *port)
+	addr := fmt.Sprintf("160.44.205.189:%d", *port)
 	// this call blocks -- the progam runs here forever
 	err := http.ListenAndServe(addr, nil)
 	fmt.Println(err.Error())
